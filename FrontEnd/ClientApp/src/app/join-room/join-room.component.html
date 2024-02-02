@@ -1,0 +1,32 @@
+<div class="container ">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5">Welcome to ChatHUB</h2>
+        <div class="text-center mb-5 text-dark">Please Join the Room to start Chatting</div>
+        <div class="card my-5 bg-dark shadow">
+  
+          <form [formGroup]="JoinRoom" class="card-body  p-lg-5" (ngSubmit)="joinRoomSubmit()">
+  
+            <div class="text-center">
+              <img src="https://cdn.pixabay.com/photo/2023/07/24/23/30/chat-8147986_1280.jpg"
+                class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="200px" alt="profile">
+            </div>
+  
+            <div class="mb-3 shadow">
+              <input formControlName="user" name="user" type="text" class="form-control" id="displayname" aria-describedby="emailHelp"
+                placeholder="Display Name">
+                <small class="text-danger" *ngIf="getControl('user')?.errors && getControl('user')?.touched">Field is Required</small>
+            </div>
+            <div class="mb-3 shadow">
+              <input formControlName="room" name="room" type="text" class="form-control" id="roomname" placeholder="Room Name">
+              <small class="text-danger" *ngIf="getControl('room')?.errors && getControl('room')?.touched">Field is Required</small>
+            </div>
+            <div class="text-center">
+              <button  type="submit" class="btn  btn-outline-info px-5 mb-5 w-100">Join</button>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
